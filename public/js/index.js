@@ -32,7 +32,7 @@ function allUsersClicked() {
     .then( data => {
       const cards = [];
 
-      for( user in data ) {
+      for( let user of data ) {
         const card = createUserCard( user );
         cards.push(card);
       }
