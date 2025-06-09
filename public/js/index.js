@@ -1,3 +1,4 @@
+//const dataUrl = "https://github.com/dan-collins-dev/dummy-data-fetching-repo/blob/main/data/users.json"
 const dataUrl = "https://raw.githubusercontent.com/dan-collins-dev/dummy-data-fetching-repo/main/data/users.json";
 
 const allUsersBtn = document.getElementById( "allUsersBtn" );
@@ -5,7 +6,6 @@ const filteredUsersBtn = document.getElementById( "filteredUsersBtn" );
 const resetBtn = document.getElementById( "resetBtn" );
 const cardContainer = document.getElementById( "user-container" );
 
-//
 allUsersBtn.addEventListener('click', allUsersClicked );
 filteredUsersBtn.addEventListener('click', filteredUsersClicked );
 resetBtn.addEventListener('click', resetClicked );
@@ -22,7 +22,7 @@ function allUsersClicked() {
 
   fetch(dataUrl, options)
     .then( response => {
-      console.log(response);
+
       if( !response.ok ) {
         throw new Error(`Error fetching data: ${response.status}`)
       }
@@ -68,12 +68,3 @@ function createUserCard ( user ) {
 
   return userCard;
 }
-/*
-  div template:
-    <div class="user-card">
-      <p class="user-name">James Glosser</p>
-      <p class="user-email">demonicurges05@gmail.com</p>
-      <p class="company-name">Livepath</p>
-      <p class="years-employed">10</p>
-    </div>
- */
