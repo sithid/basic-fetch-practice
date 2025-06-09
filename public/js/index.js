@@ -95,16 +95,30 @@ function resetClicked() {
 }
 
 function createUserCard(user) {
-  const userCard = document.createElement("div");
+  // I like flex alot but grid seems to be the best
+  // choice for the user card.  Placement of divs
+  // containing the user info is much more consistent.
 
+  const userCard = document.createElement("div");
   userCard.classList.add("user-card");
   userCard.setAttribute("data-user-id", user.id);
-  userCard.innerHTML = `
-    <p>${user.firstName} ${user.lastName}</p>
-    <p>${user.email}</p>
-    <p>${user.companyName}</p>
-    <p>${user.yearsEmployed}</p>
-  `;
 
+  const nameInfo = document.createElement("div");
+  nameInfo.classList.add("user-info");
+  nameInfo.innerHTML = `<strong>Name:</strong> ${user.firstName} ${user.lastName}`;
+
+  const emailInfo = document.createElement("div");
+  emailInfo.classList.add("user-info");
+  emailInfo.innerHTML = `<strong>Email:</strong> ${user.email}`;
+
+  const companyInfo = document.createElement("div");
+  companyInfo.classList.add("user-info");
+  companyInfo.innerHTML = `<strong>Company:</strong> ${user.companyName}`;
+
+  const yearsInfo = document.createElement("div");
+  yearsInfo.classList.add("user-info");
+  yearsInfo.innerHTML = `<strong>Years:</strong> ${user.yearsEmployed}`;
+
+  userCard.append(nameInfo, emailInfo, companyInfo, yearsInfo);
   return userCard;
 }
