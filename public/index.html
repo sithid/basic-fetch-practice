@@ -3,11 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Basic Fetch Practice</title>
   </head>
   <body>
-    <h1>Express Setup Complete</h1>
+    <header class="header-banner">
+      <h1>Users</h1>
+      <div id="button-container" class="button-container">
+        <button id="allUsersBtn">Get All Users</button>
+        <button id="filteredUsersBtn">Get Users Under 10 Years Experience</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </header>
+
+    <main id="user-container" class="user-container">
+      <div class="user-card">
+        <p class="user-name">James Glosser</p>
+        <p class="user-email">demonicurges05@gmail.com</p>
+        <p class="company-name">Livepath</p>
+        <p class="years-employed">10</p>
+      </div>
+    </main>
     <script src="./js/index.js"></script>
   </body>
 </html>
